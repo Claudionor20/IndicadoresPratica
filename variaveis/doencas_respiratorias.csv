@@ -1,0 +1,94 @@
+codigo;municipio;tipo_variavel;2017;2018;2019;2020;2021;2022
+330010;ANGRA DOS REIS;doencas_respiratorias;98;107;142;111;94;126
+330015;APERIBE;doencas_respiratorias;12;13;11;13;10;12
+330020;ARARUAMA;doencas_respiratorias;111;110;124;108;100;98
+330022;AREAL;doencas_respiratorias;10;10;16;11;18;19
+330023;ARMACAO DOS BUZIOS;doencas_respiratorias;25;17;32;20;38;28
+330025;ARRAIAL DO CABO;doencas_respiratorias;44;24;33;37;37;22
+330030;BARRA DO PIRAI;doencas_respiratorias;67;93;73;66;78;83
+330040;BARRA MANSA;doencas_respiratorias;190;166;200;185;160;188
+330045;BELFORD ROXO;doencas_respiratorias;333;336;364;543;435;314
+330050;BOM JARDIM;doencas_respiratorias;31;21;21;26;23;21
+330060;BOM JESUS DO ITABAPOANA;doencas_respiratorias;52;62;76;78;74;81
+330070;CABO FRIO;doencas_respiratorias;160;174;157;210;214;192
+330080;CACHOEIRAS DE MACACU;doencas_respiratorias;65;35;46;62;72;56
+330090;CAMBUCI;doencas_respiratorias;24;16;22;13;21;24
+330093;CARAPEBUS;doencas_respiratorias;9;9;5;11;8;10
+330095;COMENDADOR LEVY GASPARIAN;doencas_respiratorias;7;11;8;5;8;12
+330100;CAMPOS DOS GOYTACAZES;doencas_respiratorias;514;532;561;577;490;632
+330110;CANTAGALO;doencas_respiratorias;18;22;20;19;14;20
+330115;CARDOSO MOREIRA;doencas_respiratorias;12;14;13;22;17;16
+330120;CARMO;doencas_respiratorias;16;16;20;23;17;24
+330130;CASIMIRO DE ABREU;doencas_respiratorias;23;22;29;27;31;28
+330140;CONCEICAO DE MACABU;doencas_respiratorias;23;21;20;10;19;21
+330150;CORDEIRO;doencas_respiratorias;16;10;17;20;18;20
+330160;DUAS BARRAS;doencas_respiratorias;9;18;6;15;12;15
+330170;DUQUE DE CAXIAS;doencas_respiratorias;741;693;710;841;877;725
+330180;ENGENHEIRO PAULO DE FRONTIN;doencas_respiratorias;12;10;15;18;15;14
+330185;GUAPIMIRIM;doencas_respiratorias;43;45;50;41;66;59
+330187;IGUABA GRANDE;doencas_respiratorias;38;36;29;39;35;26
+330190;ITABORAI;doencas_respiratorias;183;188;180;199;204;192
+330200;ITAGUAI;doencas_respiratorias;125;128;112;123;110;120
+330205;ITALVA;doencas_respiratorias;23;24;21;18;23;17
+330210;ITAOCARA;doencas_respiratorias;46;43;37;33;31;39
+330220;ITAPERUNA;doencas_respiratorias;130;117;148;138;110;143
+330225;ITATIAIA;doencas_respiratorias;24;26;20;14;19;20
+330227;JAPERI;doencas_respiratorias;51;57;59;74;83;80
+330230;LAJE DO MURIAE;doencas_respiratorias;7;6;13;15;9;7
+330240;MACAE;doencas_respiratorias;133;157;143;133;140;132
+330245;MACUCO;doencas_respiratorias;7;6;6;4;7;5
+330250;MAGE;doencas_respiratorias;241;241;238;270;274;226
+330260;MANGARATIBA;doencas_respiratorias;35;40;50;41;61;42
+330270;MARICA;doencas_respiratorias;122;130;104;129;154;174
+330280;MENDES;doencas_respiratorias;13;15;28;24;28;27
+330285;MESQUITA;doencas_respiratorias;166;143;179;201;216;168
+330290;MIGUEL PEREIRA;doencas_respiratorias;23;35;38;36;41;45
+330300;MIRACEMA;doencas_respiratorias;34;16;28;34;37;35
+330310;NATIVIDADE;doencas_respiratorias;17;18;27;13;26;20
+330320;NILOPOLIS;doencas_respiratorias;169;192;201;214;195;170
+330330;NITEROI;doencas_respiratorias;559;620;583;548;560;552
+330340;NOVA FRIBURGO;doencas_respiratorias;205;189;159;146;142;218
+330350;NOVA IGUACU;doencas_respiratorias;640;606;616;791;812;715
+330360;PARACAMBI;doencas_respiratorias;52;56;66;65;64;44
+330370;PARAIBA DO SUL;doencas_respiratorias;57;31;44;39;40;40
+330380;PARATY;doencas_respiratorias;32;33;34;28;42;25
+330385;PATY DO ALFERES;doencas_respiratorias;31;28;26;29;32;30
+330390;PETROPOLIS;doencas_respiratorias;275;311;332;277;277;335
+330395;PINHEIRAL;doencas_respiratorias;16;20;25;10;19;20
+330400;PIRAI;doencas_respiratorias;29;18;21;27;20;22
+330410;PORCIUNCULA;doencas_respiratorias;16;12;19;20;15;22
+330411;PORTO REAL;doencas_respiratorias;19;13;12;19;22;19
+330412;QUATIS;doencas_respiratorias;13;10;13;10;6;11
+330414;QUEIMADOS;doencas_respiratorias;112;111;133;143;148;128
+330415;QUISSAMA;doencas_respiratorias;16;24;19;16;32;18
+330420;RESENDE;doencas_respiratorias;90;96;105;97;91;112
+330430;RIO BONITO;doencas_respiratorias;53;47;61;53;69;46
+330440;RIO CLARO;doencas_respiratorias;18;9;23;15;14;24
+330450;RIO DAS FLORES;doencas_respiratorias;12;8;10;2;6;12
+330452;RIO DAS OSTRAS;doencas_respiratorias;77;77;78;81;88;83
+330455;RIO DE JANEIRO;doencas_respiratorias;7270;7431;7996;6186;6880;7245
+330460;SANTA MARIA MADALENA;doencas_respiratorias;6;5;8;4;5;5
+330470;SANTO ANTONIO DE PADUA;doencas_respiratorias;60;60;64;54;54;74
+330475;SAO FRANCISCO DE ITABAPOANA;doencas_respiratorias;32;38;40;50;45;43
+330480;SAO FIDELIS;doencas_respiratorias;49;43;51;45;65;57
+330490;SAO GONCALO;doencas_respiratorias;889;803;744;823;736;796
+330500;SAO JOAO DA BARRA;doencas_respiratorias;43;48;49;36;34;44
+330510;SAO JOAO DE MERITI;doencas_respiratorias;436;402;405;500;467;453
+330513;SAO JOSE DE UBA;doencas_respiratorias;12;8;7;8;12;15
+330515;SAO JOSE DO VALE DO RIO PRETO;doencas_respiratorias;19;21;15;12;26;20
+330520;SAO PEDRO DA ALDEIA;doencas_respiratorias;70;94;75;79;90;83
+330530;SAO SEBASTIAO DO ALTO;doencas_respiratorias;8;8;5;8;5;12
+330540;SAPUCAIA;doencas_respiratorias;18;20;24;24;26;22
+330550;SAQUAREMA;doencas_respiratorias;75;93;90;119;95;84
+330555;SEROPEDICA;doencas_respiratorias;66;53;69;58;57;47
+330560;SILVA JARDIM;doencas_respiratorias;15;16;14;23;18;20
+330570;SUMIDOURO;doencas_respiratorias;8;16;17;14;11;13
+330575;TANGUA;doencas_respiratorias;23;23;28;36;26;33
+330580;TERESOPOLIS;doencas_respiratorias;153;150;139;149;184;183
+330590;TRAJANO DE MORAES;doencas_respiratorias;6;8;16;14;11;6
+330600;TRES RIOS;doencas_respiratorias;67;73;63;81;73;101
+330610;VALENCA;doencas_respiratorias;86;76;75;72;66;94
+330615;VARRE-SAI;doencas_respiratorias;7;8;8;11;7;10
+330620;VASSOURAS;doencas_respiratorias;48;40;40;40;32;57
+330630;VOLTA REDONDA;doencas_respiratorias;246;267;308;260;206;266
+;;doencas_respiratorias;;;;;;
