@@ -3,24 +3,30 @@ library(dplyr)
 library(tidyr)
 library(janitor)
 
-# 1. Ler base
+# 1. Ler base e padronizar nomes
 df <- read_excel("base_variáveis.xlsx") %>% 
   clean_names()
 
-# 2. Pivotar para formato wide
+# (opcional) remover linha lixo onde municipio é NA
+df <- df %>% 
+  filter(!is.na(municipio))
+
+# 2. Pivotar usando apenas o município como identificador
 wide <- df %>%
   pivot_wider(
-    names_from = tipo_variavel,
+    id_cols = municipio,  # <- aqui está a diferença
+    names_from  = tipo_variavel,
     values_from = c(antes_pandemia, durante_pandemia),
-    names_sep = "_"
+    names_sep   = "_"
   )
+
 
 # 3. Criar indicadores
 indicadores <- wide %>%
   mutate(
     
     # --- Taxa Mortalidade 60+ ---
-    tx_mortalidade_60_mais_17_19 = antes_pandemia_obitos_60_mais / antes_pandemia_populacao,
+    tx_mortalidade_60_mais_17_19 = antes_pandemia_obitos_60_mais / durante_pandemia_populacao,
     tx_mortalidade_60_mais_20_22 = durante_pandemia_obitos_60_mais / durante_pandemia_populacao,
     
     # --- Variação Relativa Mortalidade 60+ ---
@@ -34,7 +40,7 @@ indicadores <- wide %>%
     tx_obitos_fetais_20_22 = durante_pandemia_obitos_fetais / nascimentos_totais_20_22,
     
     # --- Doenças Respiratórias ---
-    tx_resp_17_19 = antes_pandemia_doencas_respiratorias / antes_pandemia_populacao,
+    tx_resp_17_19 = antes_pandemia_doencas_respiratorias / durante_pandemia_populacao,
     tx_resp_20_22 = durante_pandemia_doencas_respiratorias / durante_pandemia_populacao,
     
     # --- Variação relativa respiratória ---
@@ -59,3 +65,7 @@ indicadores <- wide %>%
       TRUE ~ NA_character_
     )
   )
+
+write.xlsx(indicadores, "base_indicadores.xlsx")
+
+
