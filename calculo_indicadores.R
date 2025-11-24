@@ -5,8 +5,6 @@ library(janitor)
 library(readODS)
 library(openxlsx)
 
-install.packages("readODS")
-
 # 1. Ler base e padronizar nomes
 df <- read_excel("base_variáveis.xlsx") %>% 
   clean_names()
@@ -30,8 +28,8 @@ indicadores <- wide %>%
   mutate(
     
     # --- Taxa Mortalidade 60+ ---
-    tx_mortalidade_60_mais_17_19 = antes_pandemia_obitos_60_mais / durante_pandemia_populacao,
-    tx_mortalidade_60_mais_20_22 = durante_pandemia_obitos_60_mais / durante_pandemia_populacao,
+    tx_mortalidade_60_mais_17_19 = antes_pandemia_obitos_60_mais / durante_pandemia_populacao*10000,
+    tx_mortalidade_60_mais_20_22 = durante_pandemia_obitos_60_mais / durante_pandemia_populacao*10000,
     
     # --- Variação Relativa Mortalidade 60+ ---
     tx_var_mort = (tx_mortalidade_60_mais_20_22 / tx_mortalidade_60_mais_17_19) - 1,
@@ -40,32 +38,32 @@ indicadores <- wide %>%
     nascimentos_totais_17_19 = antes_pandemia_nascidos_vivos + antes_pandemia_obitos_fetais,
     nascimentos_totais_20_22 = durante_pandemia_nascidos_vivos + durante_pandemia_obitos_fetais,
     
-    tx_obitos_fetais_17_19 = antes_pandemia_obitos_fetais / nascimentos_totais_17_19,
-    tx_obitos_fetais_20_22 = durante_pandemia_obitos_fetais / nascimentos_totais_20_22,
+    tx_obitos_fetais_17_19 = antes_pandemia_obitos_fetais / nascimentos_totais_17_19*10000,
+    tx_obitos_fetais_20_22 = durante_pandemia_obitos_fetais / nascimentos_totais_20_22*10000,
     
     # --- Doenças Respiratórias ---
-    tx_resp_17_19 = antes_pandemia_doencas_respiratorias / durante_pandemia_populacao,
-    tx_resp_20_22 = durante_pandemia_doencas_respiratorias / durante_pandemia_populacao,
+    tx_resp_17_19 = antes_pandemia_doencas_respiratorias / durante_pandemia_populacao*10000,
+    tx_resp_20_22 = durante_pandemia_doencas_respiratorias / durante_pandemia_populacao*10000,
     
     # --- Variação relativa respiratória ---
     tx_var_resp = (tx_resp_20_22 / tx_resp_17_19) - 1,
     
     # --- Causas mal definidas (CMD) ---
-    tx_cmd_17_19 = antes_pandemia_causas_mal_definidas / antes_pandemia_mortalidade_geral,
-    tx_cmd_20_22 = durante_pandemia_causas_mal_definidas / durante_pandemia_mortalidade_geral,
+    tx_cmd_17_19 = antes_pandemia_causas_mal_definidas / antes_pandemia_mortalidade_geral*10000,
+    tx_cmd_20_22 = durante_pandemia_causas_mal_definidas / durante_pandemia_mortalidade_geral*10000,
     
-    # --- Indicador qualitativo impacto 60+ ---
+    # --- Indicador qualitativo impacto 60+ --- 1: Baixo / 2: Moderado / 3: Alto
     ind_impacto_mort_60_mais = case_when(
-      tx_var_mort < quantile(tx_var_mort, 1/3, na.rm = TRUE) ~ "Baixo",
-      tx_var_mort < quantile(tx_var_mort, 2/3, na.rm = TRUE) ~ "Moderado",
-      TRUE ~ "Alto"
+      tx_var_mort < quantile(tx_var_mort, 1/3, na.rm = TRUE) ~ "1",
+      tx_var_mort < quantile(tx_var_mort, 2/3, na.rm = TRUE) ~ "2",
+      TRUE ~ "3"
     ),
     
-    # --- Qualidade CMD ---
+    # --- Qualidade CMD --- 1: Ruim / 2: Regular / 3: Boa
     ind_qualidade_registro_cmd = case_when(
-      tx_cmd_20_22 < 0.05 ~ "Boa",
-      tx_cmd_20_22 <= 0.10 ~ "Regular",
-      tx_cmd_20_22 > 0.10 ~ "Ruim",
+      tx_cmd_20_22 < 0.05 ~ "3",
+      tx_cmd_20_22 <= 0.10 ~ "2",
+      tx_cmd_20_22 > 0.10 ~ "1",
       TRUE ~ NA_character_
     )
   )
@@ -83,6 +81,7 @@ indicadores_codigo_todos <- left_join(indicadores_codigo, municipios_ibge, by = 
 indicadores_corrigido <- indicadores_codigo_todos|>
   select(codigo_datasus, cod_ibge, everything())
 
+indicadores_corrigido <- indicadores_corrigido[ ,-c(4:21)]
 
 write.xlsx(indicadores_corrigido, "base_indicadores.xlsx")
 
