@@ -2,6 +2,10 @@ library(readxl)
 library(dplyr)
 library(tidyr)
 library(janitor)
+library(readODS)
+library(openxlsx)
+
+install.packages("readODS")
 
 # 1. Ler base e padronizar nomes
 df <- read_excel("base_variáveis.xlsx") %>% 
@@ -66,6 +70,20 @@ indicadores <- wide %>%
     )
   )
 
-write.xlsx(indicadores, "base_indicadores.xlsx")
+
+# Lendo arquivos de códigos
+municipios_datasus <- read_ods("municipios_datasus.ods")
+municipios_ibge <- read_ods("municipios_ibge.ods")
+
+# Fazendo join para cóidgos
+indicadores_codigo <- left_join(indicadores, municipios_datasus, by = "municipio")
+indicadores_codigo_todos <- left_join(indicadores_codigo, municipios_ibge, by = "municipio")
+
+# Movendo colunas para primeiro
+indicadores_corrigido <- indicadores_codigo_todos|>
+  select(codigo_datasus, cod_ibge, everything())
+
+
+write.xlsx(indicadores_corrigido, "base_indicadores.xlsx")
 
 
